@@ -17,7 +17,7 @@ The react component that wraps `medisSession`. If browser do not support `mediaS
 npm install --save @mebtte/react-media-session
 ```
 
-# [Example](./example.html)
+# [Example](./example/index.html)
 
 ```jsx
 const musicList = [
