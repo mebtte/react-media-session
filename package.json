@@ -1,6 +1,6 @@
 {
   "name": "@mebtte/react-media-session",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The react component that wraps MediaSession.",
   "main": "index.js",
   "scripts": {
