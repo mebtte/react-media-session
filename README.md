@@ -1,6 +1,6 @@
 # react-media-session
 
-The react component that wraps `medisSession`. If browser do not support `mediaSession`, it will do nothing.
+The react component that wraps `medisSession`.
 
 ![](./docs/example.png)
 
@@ -19,95 +19,33 @@ The react component that wraps `medisSession`. If browser do not support `mediaS
 npm install --save @mebtte/react-media-session
 ```
 
-# Example
+# Usage
 
 ```jsx
-const musicList = [
-  {
-    title: '晴天',
-    artists: ['周杰伦'],
-    album: '叶惠美',
-    cover:
-      'https://static.mebtte.com/music_cover/67af86073121bf8bdf8980caeb53f9f0.jpeg',
-    src: 'https://static.mebtte.com/music/3bd5c05b9f8d082ba3c9425a1a712394.mp3',
-  },
-  {
-    title: 'Rolling in The Deep',
-    artists: ['Adele'],
-    album: 'Rolling In The Deep',
-    cover:
-      'https://static.mebtte.com/music_cover/456e1c50759d5b791ca612afee9c26c0.jpeg',
-    src: 'https://static.mebtte.com/music/8809026cc527483aa64c67fa61a77ab9.mp3',
-  },
-  {
-    title: 'Way Back',
-    artists: ['Cozi Zuehlsdorff', 'Vicetone'],
-    album: 'Way Back',
-    cover:
-      'https://static.mebtte.com/music_cover/304a07349deb91f1f69d21c2ced5573b.jpeg',
-    src: 'https://static.mebtte.com/music/6312d6d9bb077fb39ec329ace4b7051b.mp3',
-  },
-].map((music) => {
-  const { title, artists, album, cover, src } = music;
-  return {
-    title,
-    artist: artists.join(','),
-    album,
-    artwork: [
-      { src: cover, sizes: '96x96', type: 'image/jpeg' },
-      { src: cover, sizes: '128x128', type: 'image/jpeg' },
-      { src: cover, sizes: '192x192', type: 'image/jpeg' },
-      { src: cover, sizes: '256x256', type: 'image/jpeg' },
-      { src: cover, sizes: '384x384', type: 'image/jpeg' },
-      { src: cover, sizes: '512x512', type: 'image/jpeg' },
-    ],
-    src,
-  };
-});
-
-const Player = () => {
-  const [index, setIndex] = React.useState(0);
-  const audio = React.useRef();
-
-  const music = musicList[index];
-
-  const onPlay = () => audio.current.play();
-  const onPause = () => audio.current.pause();
-  const onBackwardTenSeconds = () => (audio.current.currentTime -= 10);
-  const onforwardTenSeconds = () => (audio.current.currentTime += 10);
-  const onPrevious = () =>
-    setIndex((i) => Math.abs((i - 1) % musicList.length));
-  const onNext = () => setIndex((i) => Math.abs((i + 1) % musicList.length));
-
-  return (
-    <div>
-      <ReactMediaSession
-        {...music}
-        onPlay={onPlay}
-        onPause={onPause}
-        onSeekBackward={onBackwardTenSeconds}
-        onSeekForward={onBackwardTenSeconds}
-        onPreviousTrack={onPrevious}
-        onNextTrack={onNext}
-      />
-      <div>
-        {music.title}-{music.artist}
-      </div>
-      <audio src={music.src} controls autoPlay ref={audio} />
-      <div>
-        <button onClick={onPlay}>play</button>
-        <button onClick={onPause}>pause</button>
-        <button onClick={onBackwardTenSeconds}>backward 10s</button>
-        <button onClick={onforwardTenSeconds}>forward 10s</button>
-        <button onClick={onPrevious}>previous</button>
-        <button onClick={onNext}>next</button>
-      </div>
-    </div>
-  );
-};
+<ReactMediaSession
+  title="Way back"
+  artist="Vicetone,Cozi Zuehlsdorff"
+  album="Way Back"
+  artwork={[
+    {
+      src: 'cover_large.jpeg',
+      size: '256x256,384x384,512x512',
+      type: 'image/jpeg',
+    },
+    {
+      src: 'cover_small.jpeg',
+      size: '96x96,128x128,192x192',
+      type: 'image/jpeg',
+    },
+  ]}
+  onPlay={() => audio.play()}
+  onPause={() => audio.pause()}
+  onSeekBackward={() => (audio.currentTime -= 10)}
+  onSeekForward={() => (audio.currentTime += 10)}
+  onPreviousTrack={() => playPreviousMusic()}
+  onNextTrack={() => playNextMusic()}
+/>
 ```
-
-[See Example Online](https://mebtte.github.io/react-media-session/example/index.html)
 
 # Props
 
@@ -123,3 +61,13 @@ const Player = () => {
 | onSeekForward   | func   | false    | null    |
 | onPreviousTrack | func   | false    | null    |
 | onNextTrack     | func   | false    | null    |
+
+# Example
+
+- [CodeSandbox](https://codesandbox.io/s/friendly-worker-94cto?fontsize=14)
+  > Use browser that support `mediaSession`
+
+# Question
+
+- If browser do not support `mediaSession`, will it throw error?
+  > if browser do not support `mediaSession`, it will do nothing.
