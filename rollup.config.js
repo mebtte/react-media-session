@@ -4,7 +4,7 @@ import { uglify } from 'rollup-plugin-uglify';
 export default {
   input: './src/index.js',
   output: {
-    file: 'index.js',
+    file: './dist/index.umd.js',
     format: 'umd',
     name: 'ReactMediaSession',
     globals: {

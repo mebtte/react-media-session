@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Types from 'prop-types';
 
 const MediaSession = ({

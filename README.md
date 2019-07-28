@@ -2,7 +2,7 @@
 
 The react component that wraps `medisSession`. If browser do not support `mediaSession`, it will do nothing.
 
-![](./example/example.png)
+![](./docs/example.png)
 
 # What is `MediaSession`
 

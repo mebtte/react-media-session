@@ -8,3 +8,6 @@ yarn.lock
 
 # macOS
 .DS_Store
+
+# dist
+/dist
