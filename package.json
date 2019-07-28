@@ -1,9 +1,8 @@
 {
   "name": "@mebtte/react-media-session",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "The react component that wraps MediaSession.",
   "main": "dist/index.umd.js",
-  "module": "src/index.js",
   "scripts": {
     "build": "rollup -c"
   },
