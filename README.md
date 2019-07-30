@@ -1,6 +1,6 @@
 # react-media-session
 
-The react component that wraps `medisSession`.
+The react component that wraps `mediaSession`.
 
 ![](./docs/example.png)
 
@@ -22,7 +22,9 @@ npm install --save @mebtte/react-media-session
 # Usage
 
 ```jsx
-<ReactMediaSession
+import MediaSession from '@mebtte/react-media-session';
+
+<MediaSession
   title="Way back"
   artist="Vicetone,Cozi Zuehlsdorff"
   album="Way Back"
@@ -44,7 +46,7 @@ npm install --save @mebtte/react-media-session
   onSeekForward={() => (audio.currentTime += 10)}
   onPreviousTrack={() => playPreviousMusic()}
   onNextTrack={() => playNextMusic()}
-/>
+/>;
 ```
 
 # Props
