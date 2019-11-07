@@ -12,6 +12,7 @@ const MediaSession = ({
   onSeekForward,
   onPreviousTrack,
   onNextTrack,
+  children,
 }) => {
   useEffect(() => {
     navigator.mediaSession.metadata = new MediaMetadata({
@@ -62,7 +63,7 @@ const MediaSession = ({
     };
   }, [onNextTrack]);
 
-  return null;
+  return children || null;
 };
 MediaSession.propTypes = {
   title: Types.string,
@@ -82,6 +83,7 @@ MediaSession.propTypes = {
   onSeekForward: Types.func,
   onPreviousTrack: Types.func,
   onNextTrack: Types.func,
+  children: Types.node,
 };
 MediaSession.defaultProps = {
   title: '',
@@ -95,6 +97,8 @@ MediaSession.defaultProps = {
   onSeekForward: null,
   onPreviousTrack: null,
   onNextTrack: null,
+
+  children: null,
 };
 
 export default MediaSession;

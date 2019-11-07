@@ -6,7 +6,7 @@ import MediaSession from './MediaSession';
 
 const Wrapper = ({ ...props }) => {
   if (!HAS_MEDIA_SESSION) {
-    return null;
+    return props.children || null;
   }
   return <MediaSession {...props} />;
 };

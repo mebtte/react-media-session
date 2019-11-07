@@ -24,6 +24,13 @@ npm install --save @mebtte/react-media-session
 ```jsx
 import MediaSession from '@mebtte/react-media-session';
 
+/**
+ * <MediaSession {...props} />
+ * or
+ * <MediaSession {...props}>
+ *   children
+ * </MediaSession>
+ */
 <MediaSession
   title="Way back"
   artist="Vicetone,Cozi Zuehlsdorff"
@@ -73,3 +80,7 @@ import MediaSession from '@mebtte/react-media-session';
 
 - If browser do not support `mediaSession`, will it throw error?
   > if browser do not support `mediaSession`, it will do nothing.
+
+# LICENSE
+
+MIT
