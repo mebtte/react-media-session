@@ -11,7 +11,7 @@ The react component that wraps `mediaSession`.
 
 # Requirement
 
-- `react` >= 16.8 with `Hooks`
+- `react` >= 16.8 with `hook`
 
 # Installation
 
@@ -58,23 +58,23 @@ import MediaSession from '@mebtte/react-media-session';
 
 # Props
 
-| props           | type   | required | default |
-| --------------- | ------ | -------- | ------- |
-| title           | string | false    | ''      |
-| artist          | string | false    | ''      |
-| album           | string | false    | ''      |
-| artwork         | array  | false    | []      |
-| onPlay          | func   | false    | null    |
-| onPause         | func   | false    | null    |
-| onSeekBackward  | func   | false    | null    |
-| onSeekForward   | func   | false    | null    |
-| onPreviousTrack | func   | false    | null    |
-| onNextTrack     | func   | false    | null    |
+| props           | type                                                 | required | default |
+| --------------- | ---------------------------------------------------- | -------- | ------- |
+| title           | string                                               | false    | ''      |
+| artist          | string                                               | false    | ''      |
+| album           | string                                               | false    | ''      |
+| artwork         | array({ src: string, size?: string, type?: string }) | false    | []      |
+| onPlay          | func                                                 | false    | null    |
+| onPause         | func                                                 | false    | null    |
+| onSeekBackward  | func                                                 | false    | null    |
+| onSeekForward   | func                                                 | false    | null    |
+| onPreviousTrack | func                                                 | false    | null    |
+| onNextTrack     | func                                                 | false    | null    |
 
 # Example
 
 - [CodeSandbox](https://codesandbox.io/s/friendly-worker-94cto?fontsize=14)
-  > Use browser that support `mediaSession`
+  > Please use browser that support `mediaSession`
 
 # Question
 
