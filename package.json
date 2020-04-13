@@ -2,9 +2,21 @@
   "name": "@mebtte/react-media-session",
   "version": "1.0.0",
   "description": "The react component that wraps MediaSession.",
-  "author": "mebtte",
+  "author": "mebtte<mebtte@gmail.com>",
   "license": "MIT",
-  "repository": "mebtte/react-media-session",
+  "keywords": [
+    "react",
+    "component",
+    "mediaSession"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mebtte/react-media-session.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mebtte/react-media-session/issues"
+  },
+  "homepage": "https://github.com/mebtte/react-media-session#readme",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -31,8 +43,5 @@
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.19.1",
     "react": "^16.13.1"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }

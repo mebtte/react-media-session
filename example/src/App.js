@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import { ExampleComponent } from 'react-media-session'
-import 'react-media-session/dist/index.css'
+import MediaSession from 'react-media-session';
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  return (
+    <div>
+      <MediaSession />
+    </div>
+  );
+};
 
-export default App
+export default App;
