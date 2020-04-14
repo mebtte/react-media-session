@@ -1,8 +1,7 @@
-/example
-/docs
-.babelrc
-prettier.config.js
-rollup.config.js
+docs/
+example/
 .eslintignore
-.eslintrc.js
-publish.sh
+.eslintrc
+.gitignore
+prettier.config.js
+tsconfig.json

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { HAS_MEDIA_SESSION } from './constants';
+import { HAS_MEDIA_SESSION, MediaSessionProps } from './constant';
 
-import MediaSession from './MediaSession';
+import MediaSession from './media_session';
 
-const Wrapper = ({ ...props }) => {
+const Wrapper = (props: MediaSessionProps) => {
   if (!HAS_MEDIA_SESSION) {
     return props.children || null;
   }
