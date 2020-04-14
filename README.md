@@ -2,7 +2,8 @@
 
 The react component that wraps `mediaSession`.
 
-![](./docs/example.png)
+![](./example/public/chrome_example.gif)
+![](./example/public/android_example.png)
 
 # What is `MediaSession`
 
@@ -58,23 +59,23 @@ import MediaSession from '@mebtte/react-media-session';
 
 # Props
 
-| props           | type                                                 | required | default |
-| --------------- | ---------------------------------------------------- | -------- | ------- |
-| title           | string                                               | false    | ''      |
-| artist          | string                                               | false    | ''      |
-| album           | string                                               | false    | ''      |
-| artwork         | array({ src: string, size?: string, type?: string }) | false    | []      |
-| onPlay          | func                                                 | false    | null    |
-| onPause         | func                                                 | false    | null    |
-| onSeekBackward  | func                                                 | false    | null    |
-| onSeekForward   | func                                                 | false    | null    |
-| onPreviousTrack | func                                                 | false    | null    |
-| onNextTrack     | func                                                 | false    | null    |
+| props           | type                                                | required | default |
+| --------------- | --------------------------------------------------- | -------- | ------- |
+| title           | string                                              | false    | ''      |
+| artist          | string                                              | false    | ''      |
+| album           | string                                              | false    | ''      |
+| artwork         | array({ src: string, size: string, type?: string }) | false    | []      |
+| onPlay          | func                                                | false    | null    |
+| onPause         | func                                                | false    | null    |
+| onSeekBackward  | func                                                | false    | null    |
+| onSeekForward   | func                                                | false    | null    |
+| onPreviousTrack | func                                                | false    | null    |
+| onNextTrack     | func                                                | false    | null    |
 
 # Example
 
-- [CodeSandbox](https://codesandbox.io/s/friendly-worker-94cto?fontsize=14)
-  > Please use browser that support `mediaSession`
+- [https://mebtte.github.io/react-media-session](https://mebtte.github.com/react-media-session)
+  > Please use browser that support `mediaSession`, see it on [caniuse](https://caniuse.com/#search=mediaSession).
 
 # Question
 

@@ -1,26 +1,27 @@
 {
   "name": "react-media-session-example",
-  "homepage": "https://mebtte.github.io/react-media-session",
   "private": true,
   "dependencies": {
+    "@mebtte/react-media-session": "file:..",
     "react": "file:../node_modules/react",
-    "react-dom": "file:../node_modules/react-dom",
-    "react-media-session": "file:.."
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "react-scripts": "^3.4.1"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

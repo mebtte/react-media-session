@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { HAS_MEDIA_SESSION, MediaSessionProps } from "./constant";
+import { HAS_MEDIA_SESSION, MediaSessionProps } from './constant';
 
-import MediaSession from "./media_session";
+import MediaSession from './media_session';
 
 const Wrapper = (props: MediaSessionProps) => {
   if (!HAS_MEDIA_SESSION) {

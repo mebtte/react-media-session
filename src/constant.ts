@@ -3,7 +3,7 @@ export const HAS_MEDIA_SESSION =
 
 interface Artwork {
   src: string;
-  sizes?: string;
+  sizes: string;
   type?: string;
 }
 

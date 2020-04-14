@@ -7,10 +7,10 @@ const { mediaSession } = navigator;
 
 const MediaSession = (props: MediaSessionProps) => {
   const {
-    title,
-    artist,
-    album,
-    artwork,
+    title = '',
+    artist = '',
+    album = '',
+    artwork = [],
 
     onPlay,
     onPause,
