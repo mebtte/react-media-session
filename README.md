@@ -74,7 +74,7 @@ import MediaSession from '@mebtte/react-media-session';
 
 # Example
 
-- [https://mebtte.github.io/react-media-session](https://mebtte.github.com/react-media-session)
+- [https://mebtte.github.io/react-media-session/docs](https://mebtte.github.com/react-media-session/docs)
   > Please use browser that support `mediaSession`, see it on [caniuse](https://caniuse.com/#search=mediaSession).
 
 # Question
