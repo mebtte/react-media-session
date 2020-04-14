@@ -3,5 +3,7 @@ example/
 .eslintignore
 .eslintrc
 .gitignore
+.prettierignore
+docs.sh
 prettier.config.js
 tsconfig.json
