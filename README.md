@@ -39,12 +39,12 @@ import MediaSession from '@mebtte/react-media-session';
   artwork={[
     {
       src: 'cover_large.jpeg',
-      size: '256x256,384x384,512x512',
+      sizes: '256x256,384x384,512x512',
       type: 'image/jpeg',
     },
     {
       src: 'cover_small.jpeg',
-      size: '96x96,128x128,192x192',
+      sizes: '96x96,128x128,192x192',
       type: 'image/jpeg',
     },
   ]}
@@ -59,18 +59,18 @@ import MediaSession from '@mebtte/react-media-session';
 
 # Props
 
-| props           | type                                                | required | default |
-| --------------- | --------------------------------------------------- | -------- | ------- |
-| title           | string                                              | false    | ''      |
-| artist          | string                                              | false    | ''      |
-| album           | string                                              | false    | ''      |
-| artwork         | array({ src: string, size: string, type?: string }) | false    | []      |
-| onPlay          | func                                                | false    | null    |
-| onPause         | func                                                | false    | null    |
-| onSeekBackward  | func                                                | false    | null    |
-| onSeekForward   | func                                                | false    | null    |
-| onPreviousTrack | func                                                | false    | null    |
-| onNextTrack     | func                                                | false    | null    |
+| props           | type                                                 | required | default |
+| --------------- | ---------------------------------------------------- | -------- | ------- |
+| title           | string                                               | false    | ''      |
+| artist          | string                                               | false    | ''      |
+| album           | string                                               | false    | ''      |
+| artwork         | array({ src: string, sizes: string, type?: string }) | false    | []      |
+| onPlay          | func                                                 | false    | null    |
+| onPause         | func                                                 | false    | null    |
+| onSeekBackward  | func                                                 | false    | null    |
+| onSeekForward   | func                                                 | false    | null    |
+| onPreviousTrack | func                                                 | false    | null    |
+| onNextTrack     | func                                                 | false    | null    |
 
 # Example
 
