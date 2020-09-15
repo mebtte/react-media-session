@@ -6,32 +6,25 @@ on:
 jobs:
   build_and_deploy:
     name: build and deploy gh-pages
-    env:
-      ACCESS_TOKEN: ${{secrets.ACTION}}
-      PUBLIC_URL: /react-media-session
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: use node.js@${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@main
+      - name: use node.js@12.x
+        uses: actions/setup-node@main
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 12.x
+
       - name: build react-media-session
         run: |
-          pwd
-          ls
           npm install
           npm run build
-      - name: build example and deploy
+
+      - name: build example and deploy gh-pages
+        env:
+          ACCESS_TOKEN: ${{secrets.ACTION}}
+          PUBLIC_URL: /react-media-session
         run: |
-          pwd
-          ls
           cd example
-          pwd
-          ls
           npm install
           npm run build
           cd build
