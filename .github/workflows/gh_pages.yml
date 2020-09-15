@@ -19,18 +19,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: go to example
-        run: |
-          cd example
-      - name: npm install
+      - name: build react-media-session
         run: |
           npm install
-      - name: npm run build
-        run: |
           npm run build
-      - name: commit files
+      - name: build example
         run: |
-          cd ./build
+          cd example
+          npm install
+          npm run build
+          cd build
           git init
           git config --local user.name mebtte
           git config --local user.email hi@mebtte.com
