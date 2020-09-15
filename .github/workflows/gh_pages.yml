@@ -21,11 +21,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: build react-media-session
         run: |
+          pwd
+          ls
           npm install
           npm run build
-      - name: build example
+      - name: build example and deploy
         run: |
+          pwd
+          ls
           cd example
+          pwd
+          ls
           npm install
           npm run build
           cd build
