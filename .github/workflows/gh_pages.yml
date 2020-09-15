@@ -10,36 +10,11 @@ jobs:
       ACCESS_TOKEN: ${{secrets.ACTION}}
       PUBLIC_URL: /react-media-session
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: use node.js@${{ matrix.node-version }}
+      - uses: actions/checkout@master
+      - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: build react-media-session
-        run: |
-          pwd
-          ls
-          npm install
-          npm run build
-      - name: build example and deploy
-        run: |
-          pwd
-          ls
-          cd example
-          pwd
-          ls
-          npm install
-          npm run build
-          cd build
-          git init
-          git config --local user.name mebtte
-          git config --local user.email hi@mebtte.com
-          git remote add origin https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git
-          git checkout -b gh-pages
-          git add --all
-          git commit -m "deploy gh-pages"
-          git push origin gh-pages -f
+          node-version: 12.x
+
+      - run: npm install && npm run build && cd example && npm install && npm run build && cd build && git init && git config --local user.name mebtte && git config --local user.email hi@mebtte.com && git remote add origin https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git && git checkout -b gh-pages && git add -A && git commit -m "deploy gh-pages" && git push origin gh-pages -f
