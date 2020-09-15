@@ -1,8 +1,8 @@
 {
   "name": "@mebtte/react-media-session",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The react component that wraps MediaSession.",
-  "author": "mebtte<mebtte@gmail.com>",
+  "author": "mebtte<hi@mebtte.com>",
   "license": "MIT",
   "keywords": [
     "react",
@@ -22,7 +22,8 @@
   "source": "src/index.tsx",
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
-    "dev": "microbundle-crl watch --no-compress --format modern,cjs"
+    "dev": "microbundle-crl watch --no-compress --format modern,cjs",
+    "prepublish": "npm run build"
   },
   "peerDependencies": {
     "react": "^16.8.0"

@@ -2,17 +2,17 @@
 
 The react component that wraps `mediaSession`.
 
-![](./example/public/chrome_example.gif)
-![](./example/public/android_example.png)
+![](./screenshots/android.png)
 
 # What is `MediaSession`
 
 - [MDN](https://developer.mozilla.org/docs/Web/API/MediaSession)
 - [Google](https://developers.google.com/web/updates/2017/02/media-session)
+- [Can I use](https://caniuse.com/?search=mediasession)
 
 # Requirement
 
-- `react` >= 16.8 with `hook`
+- `react` >= 16.8 with `hooks`
 
 # Installation
 
@@ -22,16 +22,13 @@ npm install --save @mebtte/react-media-session
 
 # Usage
 
+## As component
+
+When browser do not support `mediaSession`, it will be render `children` only.
+
 ```jsx
 import MediaSession from '@mebtte/react-media-session';
 
-/**
- * <MediaSession {...props} />
- * or
- * <MediaSession {...props}>
- *   children
- * </MediaSession>
- */
 <MediaSession
   title="Way back"
   artist="Vicetone,Cozi Zuehlsdorff"
@@ -48,13 +45,57 @@ import MediaSession from '@mebtte/react-media-session';
       type: 'image/jpeg',
     },
   ]}
-  onPlay={() => audio.play()}
-  onPause={() => audio.pause()}
-  onSeekBackward={() => (audio.currentTime -= 10)}
-  onSeekForward={() => (audio.currentTime += 10)}
-  onPreviousTrack={() => playPreviousMusic()}
-  onNextTrack={() => playNextMusic()}
-/>;
+  onPlay={audio.play}
+  onPause={audio.pause}
+  onSeekBackward={onSeekBackward}
+  onSeekForward={onSeekForward}
+  onPreviousTrack={playPreviousMusic}
+  onNextTrack={playNextMusic}
+>
+  children or null
+</MediaSession>;
+```
+
+## As hooks
+
+```jsx
+import { useMediaSession } from '@mebtte/react-media-session';
+
+const Component = () => {
+  // ...
+
+  useMediaSession({
+    title: 'Way back',
+    artist: 'Vicetone,Cozi Zuehlsdorff',
+    album: 'Way Back',
+    artwork: [
+      {
+        src: 'cover_large.jpeg',
+        sizes: '256x256,384x384,512x512',
+        type: 'image/jpeg',
+      },
+      {
+        src: 'cover_small.jpeg',
+        sizes: '96x96,128x128,192x192',
+        type: 'image/jpeg',
+      },
+    ],
+    onPlay: audio.play,
+    onPause: audio.pause,
+    onSeekBackward,
+    onSeekForward,
+    onPreviousTrack,
+    onNextTrack,
+  });
+
+  // ...
+};
+```
+
+When using hooks, you must make sure `mediaSession` exists. You can judge by blow.
+
+```js
+import { HAS_MEDIA_SESSION } from '@mebtte/react-media-session';
 ```
 
 # Props
@@ -72,15 +113,10 @@ import MediaSession from '@mebtte/react-media-session';
 | onPreviousTrack | func                                                 | false    | null    |
 | onNextTrack     | func                                                 | false    | null    |
 
-# Example
+# Screenshot
 
-- [https://mebtte.github.io/react-media-session](https://mebtte.github.com/react-media-session)
-  > Please use browser that support `mediaSession`, see it on [caniuse](https://caniuse.com/#search=mediaSession).
-
-# Question
-
-- If browser do not support `mediaSession`, will it throw error?
-  > if browser do not support `mediaSession`, it will do nothing.
+- [Android Chrome](./screenshots/android.png)
+- [PC Chrome](./screenshots/chrome.png)
 
 # LICENSE
 

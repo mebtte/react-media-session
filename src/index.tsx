@@ -1,14 +1,18 @@
 import React from 'react';
 
 import { HAS_MEDIA_SESSION, MediaSessionProps } from './constant';
+import useMediaSession from './use_media_session';
 
 import MediaSession from './media_session';
 
-const Wrapper = (props: MediaSessionProps) => {
+const MediaSessionWrapper = (
+  props: React.PropsWithChildren<MediaSessionProps>,
+) => {
   if (!HAS_MEDIA_SESSION) {
-    return props.children || null;
+    return <>{props.children || null}</>;
   }
   return <MediaSession {...props} />;
 };
 
-export default Wrapper;
+export { HAS_MEDIA_SESSION, useMediaSession };
+export default MediaSessionWrapper;

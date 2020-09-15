@@ -1,5 +1,6 @@
 {
   "name": "react-media-session-example",
+  "author": "mebtte<hi@mebtte.com>",
   "private": true,
   "dependencies": {
     "@mebtte/react-media-session": "file:..",
