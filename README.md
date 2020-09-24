@@ -1,4 +1,4 @@
-# react-media-session
+# react-media-session [![version](https://img.shields.io/npm/v/@mebtte/react-media-session)](https://www.npmjs.com/package/@mebtte/react-media-session) [![license](https://img.shields.io/npm/l/@mebtte/react-media-session)](https://github.com/mebtte/react-media-session/blob/master/LICENSE)
 
 The react component that wraps `mediaSession`.
 
